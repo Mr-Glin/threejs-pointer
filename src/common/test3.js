@@ -24,7 +24,7 @@ if (WEBGL.isWebGLAvailable()) {
     }
   );
   // renderer.shadowMap.enabled = true; // 开启阴影能力
-  camera.position.set( 0, 250, 1000 ); // 相机位置
+  camera.position.set( 0, 250, 0 ); // 相机位置
   scene.add( new THREE.AmbientLight( 0xf0f0f0 ) ); // 给场景添加一个环境光
 
   // 2d渲染
@@ -78,7 +78,7 @@ if (WEBGL.isWebGLAvailable()) {
 
 
   // 立方体
-  const geometry = new THREE.BoxGeometry(50, 50, 50); // 创建以一个立方体
+  const geometry = new THREE.BoxGeometry(10, 10, 10); // 创建以一个立方体
   const material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } ); // 创建一个网格材质
   const cube = new THREE.Mesh( geometry, material ); // 把立方体和材质添加到一个网格中
   cube.position.set(0, 0, 0);
@@ -95,8 +95,8 @@ if (WEBGL.isWebGLAvailable()) {
     let sprite1 = createMarker(spriteMaterial)
     let sprite2 = createMarker(spriteMaterial2)
     sprite1.add(sprite2)
-    sprite1.scale.set(0.1, 0.1, 0.1);
-    sprite1.position.set(100, 100, 0);
+    sprite1.scale.set(0.05, 0.05, 0.05);
+    sprite1.position.set(0, 0, 0);
     sprite1.isMarker = true;
     scene.add(sprite1);
     objArr.push(sprite1);
@@ -112,7 +112,7 @@ if (WEBGL.isWebGLAvailable()) {
       console.log('marker - ', i);
       console.log(p);
     }
-    alert('位置信息已在控制台输出');
+    // alert('位置信息已在控制台输出');
   }
 
   // 给按钮添加事件
